@@ -1,7 +1,14 @@
 import numpy as np
 import torch
+import os
+import sys
 
-from representation_generator import RepresentationGenerator
+# project root
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+# add examples folder
+sys.path.append(os.path.join(ROOT))
+
 from utils import LoadUCR, RepresentationGenerator
 
 
@@ -70,8 +77,7 @@ def load_ucr(
     try:
         dset, metadata = LoadUCR(
             dataset_name,
-            repo="ucr_drive",
-            orig_split=True
+            return_xy=False
         )
         x_train, x_test, y_train, y_test = dset
     except Exception as e:
