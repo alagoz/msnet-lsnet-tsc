@@ -1,14 +1,14 @@
-# MSNet / LS-Net
+# MRMS-Net / LMRMS-Net
 
 **Multi-Scale Representation Networks for Time Series Classification**
 
-Official PyTorch implementation of **MSNet** and **LS-Net**, two convolutional architectures designed for efficient and robust **time series classification (TSC)**.
+Official PyTorch implementation of **MRMS-Net** and **LMRMS-Net**, two convolutional architectures designed for efficient and robust **time series classification (TSC)**.
 
 The models exploit **multi-scale temporal representations** using parallel convolutional branches while maintaining strong computational efficiency.
 
 This repository provides:
 
-* Reference implementations of **MSNet** and **LS-Net**
+* Reference implementations of **MRMS-Net** and **LMRMS-Net**
 * A minimal training pipeline
 * A **one-command demo** using a sample dataset
 * Architecture diagrams
@@ -20,9 +20,9 @@ The full experimental framework used in the paper (large-scale evaluation across
 # Overview
 
 Time series classification often requires capturing patterns occurring at multiple temporal scales.
-MSNet and LS-Net address this by combining **parallel convolutional filters with different receptive fields**.
+MRMS-Net and LMRMS-Net address this by combining **parallel convolutional filters with different receptive fields**.
 
-## MSNet
+## MRMS-Net
 
 A multi-scale architecture with three convolutional branches capturing short-, medium-, and long-term temporal patterns.
 
@@ -33,7 +33,7 @@ Key characteristics:
 * Global average pooling
 * Lightweight yet expressive representation learning
 
-## LS-Net
+## LMRMS-Net
 
 A computationally efficient variant designed for fast inference.
 
@@ -50,8 +50,8 @@ Key characteristics:
 
 ![Architecture](figures/architectures.PNG)
 
-**Left:** MSNet architecture with three parallel convolutional branches.
-**Right:** LS-Net lightweight architecture with optional early exit.
+**Left:** MRMS-Net architecture with three parallel convolutional branches.
+**Right:** LMRMS-Net lightweight architecture with optional early exit.
 
 ---
 
@@ -60,8 +60,8 @@ Key characteristics:
 Clone the repository:
 
 ```
-git clone https://github.com/<username>/msnet-lsnet-tsc
-cd msnet-lsnet-tsc
+git clone https://github.com/alagoz/mrmsnet-tsc
+cd mrmsnet-tsc
 ```
 
 Install dependencies:
@@ -83,7 +83,7 @@ python demo/run_demo.py
 This script will:
 
 1. Load a small example dataset
-2. Initialize MSNet
+2. Initialize MRMS-Net
 3. Train the model for a few epochs
 4. Print training progress
 
@@ -94,7 +94,7 @@ The demo runs in **under a minute on CPU**.
 # Repository Structure
 
 ```
-msnet-lsnet-tsc
+MRMS-Net-lsnet-tsc
 │
 ├── models
 │   ├── msnet.py
@@ -119,8 +119,8 @@ msnet-lsnet-tsc
 
 | Model  | Description                                          |
 | ------ | ---------------------------------------------------- |
-| MSNet  | Multi-scale CNN with 3 convolution branches          |
-| LS-Net | Lightweight multi-scale CNN with optional early exit |
+| MRMS-Net  | Multi-scale CNN with 3 convolution branches          |
+| LMRMS-Net | Lightweight multi-scale CNN with optional early exit |
 
 ---
 
@@ -139,7 +139,7 @@ model = MSNet(
 
 # Citation
 
-If you use MSNet or LS-Net in your research, please cite:
+If you use MRMS-Net or LMRMS-Net in your research, please cite:
 
 ```
 @article{alagoz2026msnet,
